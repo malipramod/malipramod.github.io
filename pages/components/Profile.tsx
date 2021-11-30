@@ -9,6 +9,7 @@ interface ProfilePros {
 const Profile = ({ email, mobile }: ProfilePros) => {
     return (
         <div className={styles.profileCard}>
+            <span className={styles.after}></span>
             <img className={styles.image} src="/admin.jpeg" alt="Profile image" width={100} height={100} />
             <div className={styles.info}>
                 <h2>Pramod Mali</h2>
@@ -30,6 +31,7 @@ const Profile = ({ email, mobile }: ProfilePros) => {
             </div>
             <div className={styles.more} >Know more</div>
             <button className={styles.button}>Copy contact details</button>
+            <span className={styles.before}></span>
         </div>
     )
 }

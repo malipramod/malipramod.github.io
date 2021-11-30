@@ -9,9 +9,9 @@
     height: 400px;
     width: 300px;
     padding: 10px;
-    border: 5px solid;
+    border: none;
     border-radius: 20px;
-    transition: all 0.3s ease-out;
+    transition: all 0.5s ease-out;
     .image {
         width: 205px;
         height: 205px;
@@ -65,7 +65,7 @@
 
     .more {
         visibility: hidden;
-        transition: all 0.2s ease-out;
+        transition: all 0.1s ease-out;
         font-size: 1.5rem;
         top: -60px;
         position: relative;
@@ -76,7 +76,7 @@
             border: 1px solid;
             height: 20px;
             padding: 10px;
-            font-size: 1rem;
+            border-radius: 5px;
             box-shadow: -6px 6px 32px 5px rgba(106, 106, 204, 0.65);
         }
     }
@@ -89,15 +89,45 @@
         font-size: 1.2rem;
         background: #2e4c6d;
         border: none;
-        border-radius: 20px;
+        border-radius: 5px;
         color: #fdfdfd;
-        transition: all 0.2s ease-out;
+        transition: all 0.1s ease-out;
         &:hover {
             background: #174764;
             color: #fdfdfd;
             border: 3px solid;
             font-size: 1rem;
         }
+    }
+
+    .before,
+    .after {
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 0;
+        border: solid white;
+        border-width: 0;
+        border-radius: 0;
+        transition: 0;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border-color: white;
+    }
+    .before {
+        position: relative;
+        right: 0;
+        bottom: -10px;
+    }
+    .after {
+        position: relative;
+        left: 0;
+        top: -10px;
+    }
+    span {
+        position: relative;
+        line-height: 23px;
+        transition: 0.3s ease;
     }
 
     &:hover {
@@ -130,7 +160,23 @@
         .more {
             visibility: visible;
             transform: translate(0px, 0px);
-            transform: scale(1.5);
+            // transform: scale(1.5);
+        }
+
+        .after {
+            border-width: 3px 0 0 0;
+        }
+        .before {
+            border-width: 0 0 3px 0;
+        }
+
+        .after,
+        .before {
+            height: 100%;
+            width: 105%;
+            transition: width 0.5s ease, height 0.5s ease 0.5s, border-top-right-radius 0.1s ease 0.4s,
+                border-bottom-left-radius 0.1s ease 0.4s, border-bottom-right-radius 0.1s ease 0.9s,
+                border-top-left-radius 0.1s ease 0.9s;
         }
     }
 }
