@@ -1,0 +1,182 @@
+.profileCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fdfdfd;
+    background-color: #42515a;
+    box-shadow: 0 10px 90px #00000024;
+    height: 400px;
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.5s ease-out;
+    .image {
+        width: 205px;
+        height: 205px;
+        border-radius: 50%;
+        transition: all 0.3s ease-out;
+    }
+    .info {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.5s ease-out;
+        .contact {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            .icons {
+                visibility: visible;
+                font-size: 0.8rem;
+                font-weight: 400;
+                font-weight: bold;
+                padding: 5px 0px;
+                cursor: pointer;
+                border: 1px solid;
+                padding: 10px;
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                transition: all 0.5s ease-out;
+                &:hover {
+                    background-color: #fdfdfd;
+                    color: #42515a;
+                }
+            }
+            .slidIn {
+                visibility: hidden;
+                position: relative;
+                left: 40px;
+            }
+            .left {
+                left: -40px;
+                top: -70px;
+            }
+            .right {
+                right: -40px;
+                top: -70px;
+            }
+        }
+    }
+
+    .more {
+        visibility: hidden;
+        transition: all 0.1s ease-out;
+        font-size: 1.5rem;
+        top: -60px;
+        position: relative;
+        cursor: pointer;
+        &:hover {
+            display: flex;
+            align-items: center;
+            border: 1px solid;
+            height: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: -6px 6px 32px 5px rgba(106, 106, 204, 0.65);
+        }
+    }
+
+    .button {
+        visibility: visible;
+        width: 200px;
+        height: 40px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        background: #2e4c6d;
+        border: none;
+        border-radius: 5px;
+        color: #fdfdfd;
+        transition: all 0.1s ease-out;
+        &:hover {
+            background: #174764;
+            color: #fdfdfd;
+            border: 3px solid;
+            font-size: 1rem;
+        }
+    }
+
+    .before,
+    .after {
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 0;
+        border: solid white;
+        border-width: 0;
+        border-radius: 0;
+        transition: 0;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border-color: white;
+    }
+    .before {
+        position: relative;
+        right: 0;
+        bottom: -10px;
+    }
+    .after {
+        position: relative;
+        left: 0;
+        top: -10px;
+    }
+    span {
+        position: relative;
+        line-height: 23px;
+        transition: 0.3s ease;
+    }
+
+    &:hover {
+        box-shadow: -6px 6px 32px 5px rgba(106, 106, 204, 0.65);
+        .image {
+            box-shadow: 0px -19px 26px 5px rgba(106, 106, 204, 0.59);
+            position: relative;
+            transform: translate(0px, -120px);
+            border: 5px solid;
+        }
+        .info {
+            position: relative;
+            transform: translate(0px, -110px);
+            .contact {
+                .icons {
+                    visibility: visible;
+                    transform: translate(0px, 0px);
+                }
+                .slidIn {
+                    visibility: visible;
+                }
+                .left {
+                    transform: translate(35px, 70px);
+                }
+                .right {
+                    transform: translate(-35px, 70px);
+                }
+            }
+        }
+        .more {
+            visibility: visible;
+            transform: translate(0px, 0px);
+            // transform: scale(1.5);
+        }
+
+        .after {
+            border-width: 3px 0 0 0;
+        }
+        .before {
+            border-width: 0 0 3px 0;
+        }
+
+        .after,
+        .before {
+            height: 100%;
+            width: 105%;
+            transition: width 0.5s ease, height 0.5s ease 0.5s, border-top-right-radius 0.1s ease 0.4s,
+                border-bottom-left-radius 0.1s ease 0.4s, border-bottom-right-radius 0.1s ease 0.9s,
+                border-top-left-radius 0.1s ease 0.9s;
+        }
+    }
+}
